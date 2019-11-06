@@ -1,1 +1,7 @@
-<p>{{ user.name.first }} {{ user.name.last }}</p>
+<article class="user-item">
+  <div class="profile-picture-container">
+    <img class="profile-picture" [src]="user.picture.medium" alt="user.name.first">
+  </div>
+  <p>{{ user.name.first }} {{ user.name.last }}</p>
+</article>
+

@@ -1,0 +1,30 @@
+article {
+  margin: 1rem;
+  &.user-item {
+    display: flex;
+    align-items: center;
+    border-radius: 2rem;
+    width: 14rem;
+
+    .profile-picture-container {
+      width: 3rem;
+      padding-right: 1rem;
+      display: flex;
+
+      .profile-picture {
+        border-radius: 50%;
+        width: 100%;
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+
+  }
+
+  &.selected {
+    border: 1px solid cccccc;
+    background-color: #e6e6e6;
+  }
+}

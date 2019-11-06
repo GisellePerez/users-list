@@ -7,6 +7,10 @@ import { UsersListComponent } from './users-list/users-list.component';
 import { UserItemComponent } from './users-list/user-item/user-item.component';
 import { UserDetailComponent } from './users-list/user-detail/user-detail.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule, MatSelectModule, MatOptionModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,13 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatOptionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
