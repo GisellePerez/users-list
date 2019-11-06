@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { UsersService } from './users.service';
 
 @Component({
@@ -8,15 +8,22 @@ import { UsersService } from './users.service';
 })
 export class UsersListComponent implements OnInit {
 
+  @Output() selectedUser: EventEmitter<any> = new EventEmitter();
+
   public users = [];
 
   constructor(public usersService: UsersService) { }
 
   ngOnInit() {
     this.usersService.fetchUsers().subscribe((response) => {
-      console.log(response)
+      console.log(response);
       this.users = response.results;
     });
+  }
+
+  public onSelectedUser(user) { // tipar
+    console.log(user);
+    this.selectedUser = user;
   }
 
 }

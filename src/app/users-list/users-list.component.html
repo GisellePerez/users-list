@@ -1,3 +1,7 @@
 <div *ngIf="users">
-  <app-user-item *ngFor="let user of users; let i = index;" [user]="users[i]"></app-user-item>
+  <app-user-item
+    *ngFor="let user of users; let i = index;"
+    [user]="user"
+    (click)="onSelectedUser(user)">
+  </app-user-item>
 </div>
