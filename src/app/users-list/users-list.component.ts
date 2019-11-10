@@ -8,7 +8,8 @@ import { UsersService } from './users.service';
 })
 export class UsersListComponent implements OnInit {
 
-  @Output() selectedUser: EventEmitter<any> = new EventEmitter();
+  // @Output() selectedUser: EventEmitter<any> = new EventEmitter();
+  public selectedUser = null;
 
   public users = [];
 
@@ -21,9 +22,8 @@ export class UsersListComponent implements OnInit {
     });
   }
 
-  public onSelectedUser(user) { // tipar
-    console.log(user);
-    this.selectedUser = user;
+  public onSelectedUser(event, newSelectedUser) { // tipar
+    this.selectedUser = newSelectedUser;
   }
 
 }

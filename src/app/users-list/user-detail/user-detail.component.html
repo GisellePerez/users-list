@@ -1,1 +1,41 @@
-<p>user-detail works!</p>
+<section>
+  <div class="user-detail-header">
+
+    <div class="background-img"
+    [ngStyle]="{'background-image': 'url' + '(' + selectedUser.picture.large + ')'}"></div>
+
+    <div class="user-header-absolute-container">
+      <div class="user-img-container">
+        <img class="user-img"
+          [src]="selectedUser.picture.medium" 
+          alt="{{ selectedUser.name.first + '' + selectedUser.name.last }}">
+      </div>
+  
+      <h4 class="selected-user-name">{{ selectedUser.name.first }} {{ selectedUser.name.last }}</h4>
+      <p class="selected-user-location">{{ selectedUser.location.city }}</p>
+    </div>
+  </div>
+
+  <div class="user-detail-info">
+    <div class="info-section">
+      <h5 class="subtitle">Short bio</h5>
+      <p class="info-value">Lorem ipsum</p>
+    </div>
+
+    <div class="info-section">
+      <h5 class="subtitle">The direction of the profession</h5>
+      <p class="info-value">Lorem ipsum</p>
+    </div>
+
+    <div class="info-section">
+      <h5 class="subtitle">Email Address</h5>
+      <p class="info-value">{{ selectedUser.email }}</p>
+    </div>
+
+    <div class="info-section">
+      <h5 class="subtitle">Phone Number</h5>
+      <p class="info-value">{{ selectedUser.phone }}</p>
+    </div>
+
+  </div>
+</section>

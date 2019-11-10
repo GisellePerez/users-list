@@ -1,7 +1,16 @@
-<div *ngIf="users">
-  <app-user-item
-    *ngFor="let user of users; let i = index;"
-    [user]="user"
-    (click)="onSelectedUser(user)">
-  </app-user-item>
-</div>
+<section class="main-container">
+  <div *ngIf="users" class="users">
+    <app-user-item class="user-item"
+      *ngFor="let user of users; let i = index;"
+      [user]="user"
+      [selectedUser]="selectedUser"
+      (click)="onSelectedUser($event, user)">
+    </app-user-item>
+  
+  </div>
+  
+  <app-user-detail class="user-detail"
+    *ngIf="selectedUser"
+    [selectedUser]="selectedUser">
+  </app-user-detail>
+</section>

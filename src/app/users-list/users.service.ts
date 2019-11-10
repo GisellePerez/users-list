@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 
 @Injectable({
@@ -12,7 +12,13 @@ export class UsersService {
 
   constructor(public http: HttpClient) { }
 
-  fetchUsers(): Observable<any> { // tipar
+  public fetchUsers(): Observable<any> { // tipar
     return this.http.get('https://randomuser.me/api/?results=50');
   }
+
+  public filterUsers(option): Observable<any> {
+    console.log(option);
+    return of(this.users);
+  }
+
 }

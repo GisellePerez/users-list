@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-user-item',
@@ -8,12 +8,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class UserItemComponent implements OnInit {
 
   @Input() user; // tipar
-  @Output() selectedUser: EventEmitter<any> = new EventEmitter<any>(); // tipar
+  @Input() selectedUser = null;
 
   constructor() { }
 
   ngOnInit() {
-    // console.log(this.user)
   }
 
 }
