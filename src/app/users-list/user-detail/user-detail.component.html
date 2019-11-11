@@ -12,19 +12,19 @@
       </div>
   
       <h4 class="selected-user-name">{{ selectedUser.name.first }} {{ selectedUser.name.last }}</h4>
-      <p class="selected-user-location">{{ selectedUser.location.city }}</p>
+      <p class="selected-user-username">{{ selectedUser.login.username }}</p>
     </div>
   </div>
 
   <div class="user-detail-info">
     <div class="info-section">
-      <h5 class="subtitle">Short bio</h5>
-      <p class="info-value">Lorem ipsum</p>
+      <h5 class="subtitle">Location</h5>
+      <p class="info-value">{{ selectedUser.location.state }}, {{ selectedUser.location.country }} </p>
     </div>
 
     <div class="info-section">
-      <h5 class="subtitle">The direction of the profession</h5>
-      <p class="info-value">Lorem ipsum</p>
+      <h5 class="subtitle">Age</h5>
+      <p class="info-value">{{ selectedUser.dob.age }}</p>
     </div>
 
     <div class="info-section">

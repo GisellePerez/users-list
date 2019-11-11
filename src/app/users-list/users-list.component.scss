@@ -3,9 +3,13 @@
 
   .users {
     display: flex;
+    flex-wrap: wrap;
     width: 60%;
     max-width: 60%;
-    flex-direction: column;
+
+    .user-item {
+      min-width: 50%;
+    }
   }
 
   .user-detail {

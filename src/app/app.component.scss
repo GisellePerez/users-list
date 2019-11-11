@@ -1,0 +1,17 @@
+.main-container {
+  margin: 2rem;
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .select-section {
+    display: flex;
+    align-items: center;
+    padding-bottom: 1rem;
+
+    h4 {
+      padding-right: 4rem;
+    }
+  }
+}

@@ -1,15 +1,30 @@
-<h1>Users</h1>
-<p>If you want to get a specific user's contact information, just select group and then select him or her from the list.</p>
+<div class="main-container">
+  <h1>Users</h1>
+  <p class="instructions">If you want to get a specific user's contact information, just select group and then select him or her from the list.</p>
+  
+  <div class="select-section">
+    <h4>Select group of users:</h4>
+    
+    <mat-form-field class="group-select">
 
-<h4>Select group of users:</h4>
+      <mat-label>Select a group</mat-label>
+      
+      <mat-select>
+        <mat-option 
+          (selectionChange)="onSelectionChange($event, value)" 
+          value="male"> 
+          Male 
+        </mat-option>
 
-<mat-form-field>
-  <mat-label>Favorite food</mat-label>
-  <mat-select>
-    <mat-option> A </mat-option>
-    <mat-option> B </mat-option>
-    <mat-option> C </mat-option>
-  </mat-select>
-</mat-form-field>
+        <mat-option 
+          (selectionChange)="onSelectionChange($event, value)" 
+          value="female"> 
+          Female 
+        </mat-option>
+      </mat-select>
 
-<app-users-list></app-users-list>
+    </mat-form-field>
+  </div>
+  
+  <app-users-list></app-users-list>
+</div>

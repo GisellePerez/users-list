@@ -27,7 +27,7 @@ section {
       z-index: 10;
       margin: 0 auto;
       width: 9rem;
-      padding: 2rem 8px 1rem 0;
+      padding: 0 8px 0 0;
       
       .user-img {
         border-radius: 50%;
@@ -39,11 +39,11 @@ section {
     .selected-user-name {
       color: #fff;
       font-size: 18px;
-      margin: 0.5rem;
+      margin: 0.5rem 0 0 0;
       text-align: center;
     }
 
-    .selected-user-location {
+    .selected-user-username {
       font-size: 14px;
       color: #fff;
       margin: 0;
@@ -56,8 +56,18 @@ section {
     .info-section {
       margin: 1rem;
 
+      :nth-child(1) {
+        padding-top: 1rem;
+      }
+
       .subtitle {
-        color: #bdc8dc;
+        color: rgb(110, 115, 124);
+        margin: 0;
+        padding-bottom: 0.5rem;
+      }
+
+      .info-value {
+        margin: 0;
       }
 
     }

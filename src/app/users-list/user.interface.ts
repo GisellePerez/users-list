@@ -1,4 +1,28 @@
-// export interface User {
+export class User {
+  gender: string;
+  name: {
+    title: string;
+    first: string;
+    last: string;
+  }
+  age: number;
+  email: string;
+  city:string;
+  state: string;
+  country: string;
+  phone: string;
+  picture: {
+    thumbnail: string;
+    medium: string;
+    large: string;
+  }
+  location: {
+    city: string;
+    state: string;
+  }
+  description: string;
+  ocupation: string;
+}
 // gender: string; 
 // name: {
 //   title: string, 

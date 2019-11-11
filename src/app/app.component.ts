@@ -5,6 +5,14 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
   title = 'user-list-app';
+
+  public onSelectionChange(event, value) {
+    console.log(event, value)
+  }
+
 }
+
+
