@@ -18,8 +18,8 @@ export class AppComponent {
 
   constructor(private usersService: UsersService) { }
 
-  public onSelectionChange(event: MatSelectChange) {
-    this.usersService.selectedFilter.emit(event);
+  public onSelectionChange(filter: MatSelectChange) {
+    this.usersService.selectedFilter.emit(filter);
   }
 
 

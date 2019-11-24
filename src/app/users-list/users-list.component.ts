@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { UsersService } from './users.service';
 import { MatSelectChange } from '@angular/material';
 import { Subscription } from 'rxjs';
+import { User } from './user.interface';
 
 @Component({
   selector: 'app-users-list',
@@ -10,9 +11,9 @@ import { Subscription } from 'rxjs';
 })
 export class UsersListComponent implements OnInit, OnDestroy {
 
-  public selectedUser = null;
-  public users = [];
-  public filteredUsers = [];
+  public selectedUser: User = null;
+  public users: User[] = [];
+  public filteredUsers: User[] = [];
 
   private subs: Subscription[] = [];
 
@@ -20,8 +21,8 @@ export class UsersListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.subs.push(
-      this.usersService.fetchUsers().subscribe((response) => {
-        this.users = response.results;
+      this.usersService.fetchUsers().subscribe((response: User[]) => {
+        this.users = response;
         this.filteredUsers = this.users;
       }),
   
@@ -33,14 +34,14 @@ export class UsersListComponent implements OnInit, OnDestroy {
     )
   }
 
-  public onSelectedUser(event, newSelectedUser) { // tipar
+  public onSelectedUser(event, newSelectedUser: User) {
     this.selectedUser = newSelectedUser;
   }
 
   /**
    * This method filters users according to selected filter and clears any selected user
    */
-  private filterUsers(users, filter: string) {    
+  private filterUsers(users: User[], filter: string) {    
     if (filter === 'all') {
       this.filteredUsers = this.users;
     } else {

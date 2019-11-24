@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { User } from '../user.interface';
 
 @Component({
   selector: 'app-user-detail',
@@ -7,12 +8,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class UserDetailComponent implements OnInit {
 
-  @Input() selectedUser = null;
+  @Input() selectedUser: User = null;
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.selectedUser);
   }
 
 }
