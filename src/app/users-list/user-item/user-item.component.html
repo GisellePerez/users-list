@@ -1,6 +1,5 @@
 <div class="user-item" [ngClass]="{'selected': selectedUser === user }">
-  <div class="profile-picture-container"
-    (click)="onSelectedUserChange(user)">
+  <div class="profile-picture-container">
     <img class="profile-picture" 
       [src]="user.picture.medium" 
       alt="{{ user.name.first + '' + user.name.last }}">

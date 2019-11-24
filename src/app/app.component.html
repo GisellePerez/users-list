@@ -11,7 +11,7 @@
       
       <mat-select FormControl="selectCtrl" 
         class="filters-select"
-        (selectionChange)="onSelectionChange($event, value)">
+        (selectionChange)="onSelectionChange($event)">
         
         <mat-option *ngFor="let option of filterOptions" 
           [value]="option.value"> 
