@@ -9,18 +9,14 @@
 
       <mat-label>Select a group</mat-label>
       
-      <mat-select>
-        <mat-option 
-          (selectionChange)="onSelectionChange($event, value)" 
-          value="male"> 
-          Male 
+      <mat-select FormControl="selectCtrl" 
+        (selectionChange)="onSelectionChange($event, value)">
+        
+        <mat-option *ngFor="let option of filterOptions" 
+          [value]="option.value"> 
+          {{option.label}} 
         </mat-option>
-
-        <mat-option 
-          (selectionChange)="onSelectionChange($event, value)" 
-          value="female"> 
-          Female 
-        </mat-option>
+      
       </mat-select>
 
     </mat-form-field>

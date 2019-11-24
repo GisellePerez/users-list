@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { UsersService } from './users-list/users.service';
+import { MatSelectChange } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +9,19 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'user-list-app';
+  public title = 'user-list-app';
+  public filterOptions = [
+    {label: 'Male', value: 'male'},
+    {label: 'Female', value: 'female'},
+    {label: 'All', value: 'all'}
+  ]
 
-  public onSelectionChange(event, value) {
-    console.log(event, value)
+  constructor(private usersService: UsersService) { }
+
+  public onSelectionChange(event: MatSelectChange) {
+    this.usersService.selectedFilter.emit(event);
   }
+
 
 }
 

@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from './user.interface';
+import { MatSelectChange } from '@angular/material';
 
 
 @Injectable({
@@ -10,45 +11,15 @@ import { User } from './user.interface';
 })
 export class UsersService {
 
-  public users = []; // tipar
+  @Output() selectedFilter: EventEmitter<MatSelectChange>;
 
-  constructor(public http: HttpClient) { }
-
-  public fetchUsers(): Observable<any> { // tipar
-    return this.http.get('https://randomuser.me/api/?results=50')
-    // .pipe(
-    //   map((data: any) => {
-    //     return data.json().results.map((item: any) => {
-    //       // const model = new User();
-    //       // Object.assign(model, item);
-    //       return new User(
-    //         item.gender,
-    //         item.name,
-    //         item.age,
-    //         item.email,
-    //         item.city,
-    //         item.state,
-    //         item.country,
-    //         item.phone,
-    //         item.picture,
-    //         item.location,
-    //         item.description,
-    //         item.ocupation
-    //       )
-
-    //     })
-    //   })
-    // )
-    
+  constructor(public http: HttpClient) { 
+    this.selectedFilter = new EventEmitter();
   }
 
-  public getUsers() {
-    return this.users;
+  public fetchUsers(): Observable<any> { 
+    return this.http.get('https://randomuser.me/api/?results=50');
   }
 
-  public filterUsers(option): Observable<any> {
-    console.log(option);
-    return of(this.users);
-  }
-
+  
 }
