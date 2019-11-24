@@ -3,3 +3,56 @@
 
 html, body { height: 100%; }
 body { margin: 0 auto; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-form-field.filters-form-field {
+  border: 1px solid #cccccc;
+  height: 32px;
+  padding: 0 0.3rem 0 0.5rem;
+  border-radius: 5px;
+
+  .mat-form-field-wrapper {
+    padding: 0 !important;
+    height: 100% !important;
+    
+    .mat-form-field-flex {
+      height: 100% !important;
+
+      .mat-form-field-infix {
+        height: 100% !important;
+        border: none !important;
+        padding: 0 !important;
+      
+        mat-select.filters-select {
+          height: 100% !important;
+        }
+
+        .mat-form-field-label-wrapper {
+          .mat-form-field-label {
+            // mat-label {
+            //   visibility: hidden;
+            // }
+          }
+        }
+      }
+    }
+
+    .mat-form-field-underline {
+      visibility: hidden !important;
+    }
+
+  }
+
+  mat-select.filters-select {
+    height: 100%;
+
+    .mat-select-trigger {
+      height: 100%;
+
+      .mat-select-value {
+        padding-top: 0.5rem;
+        height: 100%;
+      }
+    }
+  }
+  
+}

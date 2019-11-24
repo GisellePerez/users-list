@@ -5,11 +5,13 @@
   <div class="select-section">
     <h4>Select group of users:</h4>
     
-    <mat-form-field class="group-select">
+    <mat-form-field class="filters-form-field">
 
       <mat-label>Select a group</mat-label>
       
-      <mat-select FormControl="selectCtrl" 
+      <mat-select floatLabel="never"
+        FormControl="selectCtrl" 
+        class="filters-select"
         (selectionChange)="onSelectionChange($event, value)">
         
         <mat-option *ngFor="let option of filterOptions" 

@@ -25,8 +25,7 @@ export class UsersListComponent implements OnInit, OnDestroy {
         this.filteredUsers = this.users;
       }),
   
-      this.usersService.selectedFilter    
-      .subscribe((filter: MatSelectChange) => {
+      this.usersService.selectedFilter.subscribe((filter: MatSelectChange) => {
         if (filter) {
           this.filterUsers(this.users, filter.value)
         }
@@ -41,8 +40,7 @@ export class UsersListComponent implements OnInit, OnDestroy {
   /**
    * This method filters users according to selected filter and clears any selected user
    */
-  private filterUsers(users, filter: string) {
-    
+  private filterUsers(users, filter: string) {    
     if (filter === 'all') {
       this.filteredUsers = this.users;
     } else {
